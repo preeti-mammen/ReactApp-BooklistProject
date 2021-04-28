@@ -2,47 +2,45 @@ import React from "react";
 import ReactDom from "react-dom";
 import "./index.css";
 
+const firstbook = {
+  image:
+    "https://m.media-amazon.com/images/I/81eB+7+CkUL._AC_UL640_FMwebp_QL65_.jpg",
+  title: "I Love You to the Moon and Back",
+  author: "by Amelia Hepworth and Tim Warnes",
+};
+
+const secondbook = {
+  image:
+    "https://m.media-amazon.com/images/I/81IH8kx0PgL._AC_UY436_FMwebp_QL65_.jpg",
+  title: "The Dreaded Groak: Overcoming prejudice and discrimination",
+  author: "by Peta Lemon and Maria Dasic Todoric",
+};
+
 function BookList() {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book
+        title={firstbook.title}
+        author={firstbook.author}
+        image={firstbook.image}
+      />
+      <Book
+        title={secondbook.title}
+        author={secondbook.author}
+        image={secondbook.image}
+      />
     </section>
   );
 }
 
-const Book = () => {
+const Book = (props) => {
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img src={props.image} alt="" />
+      <h1>{props.title}</h1>
+      <h4>{props.author}</h4>
     </article>
   );
 };
-
-const Image = () => (
-  <img
-    src="https://m.media-amazon.com/images/I/81eB+7+CkUL._AC_UL640_FMwebp_QL65_.jpg"
-    alt=""
-    height="200px"
-    width="200px"
-  />
-);
-
-const Title = () => <h1>I Love You to the Moon and Back</h1>;
-
-const Author = () => (
-  <h4 style={{ color: "#617d98", fontSize: "0.75rem", margin: "0.25rem" }}>
-    - by Amelia Hepworth and Tim Warnes
-  </h4>
-);
 
 ReactDom.render(<BookList />, document.getElementById("root"));
