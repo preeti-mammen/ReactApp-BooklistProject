@@ -23,7 +23,15 @@ function BookList() {
         title={firstbook.title}
         author={firstbook.author}
         image={firstbook.image}
-      />
+      >
+        {/* Children Prop */}
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+          laborum ut soluta deserunt, deleniti rem dolor? Excepturi ipsam beatae
+          inventore nihil impedit temporibus a officia, dolorum numquam
+          perspiciatis, aut explicabo.
+        </p>
+      </Book>
       <Book
         title={secondbook.title}
         author={secondbook.author}
@@ -34,11 +42,13 @@ function BookList() {
 }
 
 const Book = (props) => {
+  const { image, title, author, children } = props;
   return (
     <article className="book">
-      <img src={props.image} alt="" />
-      <h1>{props.title}</h1>
-      <h4>{props.author}</h4>
+      <img src={image} alt="" />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
+      {children}
     </article>
   );
 };
