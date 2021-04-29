@@ -45,6 +45,15 @@ body {
   margin-top: 0.5rem;
 }
 
+.book button {
+  border-radius: 5px;
+  margin: 0.5rem;
+  padding: 0.25rem;
+  background-color: cadetblue;
+  color: #222;
+  font-weight: 500;
+}
+
 @media screen and (min-width: 768px) {
   .booklist {
     grid-template-columns: repeat(3, 1fr);
